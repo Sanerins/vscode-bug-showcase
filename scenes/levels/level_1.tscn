@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjb556674hdii"]
+
+[ext_resource type="PackedScene" uid="uid://2oim2xbk3c08" path="res://scenes/objects/balls/base_ball.tscn" id="1_jkwee"]
+[ext_resource type="PackedScene" uid="uid://8tsrlijuxr88" path="res://scenes/objects/bricks/base_brick.tscn" id="2_2t2tf"]
+[ext_resource type="PackedScene" uid="uid://bontnye3d00ci" path="res://scenes/objects/paddles/base_paddle.tscn" id="3_ddqad"]
+[ext_resource type="PackedScene" uid="uid://boyhj8sl6xogp" path="res://scenes/tiles/background_tiles.tscn" id="4_0ob5j"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="base_ball" parent="." instance=ExtResource("1_jkwee")]
+position = Vector2(605, 627)
+
+[node name="base_brick" parent="." instance=ExtResource("2_2t2tf")]
+position = Vector2(429, 524)
+
+[node name="base_paddle" parent="." instance=ExtResource("3_ddqad")]
+position = Vector2(605, 635)
+
+[node name="BackgroundTiles" parent="." instance=ExtResource("4_0ob5j")]

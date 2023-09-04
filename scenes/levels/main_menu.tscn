@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkwl5idfaj7ip"]
+
+[ext_resource type="Script" path="res://scripts/levels/main_menu.cs" id="1_dfj5x"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_dfj5x")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 406.0
+offset_top = 109.0
+offset_right = 780.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 410.0
+offset_top = 371.0
+offset_right = 784.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

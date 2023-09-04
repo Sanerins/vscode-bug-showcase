@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://8tsrlijuxr88"]
+
+[ext_resource type="Script" path="res://scripts/objects/bricks/base_brick.cs" id="1_75m6q"]
+[ext_resource type="Texture2D" uid="uid://dqaciorvak1ec" path="res://resources/bricks.png" id="1_ttt75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrtyn"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ia8u"]
+atlas = ExtResource("1_ttt75")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25jae"]
+atlas = ExtResource("1_ttt75")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyudq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ia8u")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25jae")
+}],
+"loop": true,
+"name": &"whole",
+"speed": 5.0
+}]
+
+[node name="base_brick" type="CharacterBody2D"]
+script = ExtResource("1_75m6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xrtyn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jyudq")
+animation = &"whole"

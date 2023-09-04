@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://2oim2xbk3c08"]
+
+[ext_resource type="Texture2D" uid="uid://bsdg7rxnrtbv3" path="res://resources/paddles_and_balls.png" id="1_7cf24"]
+[ext_resource type="Script" path="res://scripts/objects/balls/base_ball.cs" id="1_vcdx3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8cpi"]
+atlas = ExtResource("1_7cf24")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra2rh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8cpi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ot5ys"]
+radius = 7.0
+
+[node name="base_ball" type="CharacterBody2D"]
+script = ExtResource("1_vcdx3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_ra2rh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ot5ys")
